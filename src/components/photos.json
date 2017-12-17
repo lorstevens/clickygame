@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Avril",
+    "isClicked": false,
+    "image":
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Avril_Lavigne%2C_Wango_Tango_2013.jpg/440px-Avril_Lavigne%2C_Wango_Tango_2013.jpg"
+
+  },
+  {
+    "id": 2,
+    "name": "Billie",
+    "isClicked": false,
+    "image":
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/RiP2013_GreenDay_Billie_Joe_Armstrong_0016.jpg/440px-RiP2013_GreenDay_Billie_Joe_Armstrong_0016.jpg"
+
+  },
+  {
+    "id": 3,
+    "name": "Joel",
+    "isClicked": false,
+    "image":
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Joel_Madden_2012_%282%29.jpg/440px-Joel_Madden_2012_%282%29.jpg"
+
+  },
+    {
+    "id": 4,
+    "name": "Tom",
+    "isClicked": false,
+    "image":
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Tom_DeLonge_performing_at_early_Blink-182_show.jpg/440px-Tom_DeLonge_performing_at_early_Blink-182_show.jpg"
+
+  }
+]
