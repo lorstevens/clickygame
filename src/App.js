@@ -10,19 +10,31 @@ import photos from "./components/photos.json";
 class App extends Component {
   // Setting this.state.photos to the photos json array
   state = {
-   photos,
+    photos,
+    isClicked: false,
     count: 0
   };
 
   handleIncrement = () => {
     // We always use the setState method to update a component's state
+    this.setState({ isClicked: true });
     this.setState({ count: this.state.count + 1 });
+    console.log(this.state);
   };
 
+
   handleShuffle = () => {
+    //we need 
   	this.setState ({photos: photos.sort(() => Math.random() * 2 -1)})
 }
 
+  handleLoss = () => {
+    if (this.state.isClicked === true){
+      this.setState({count: 0})
+      this.setState({isClicked: false})
+      alert("Same person-- start again!")
+  }
+}
 
 render() {
     return (
@@ -43,8 +55,9 @@ render() {
             image={friend.image}
             isClicked ={friend.isClicked}
             count={this.state.count}
-         	handleIncrement={this.handleIncrement}
-         	handleShuffle = {this.handleShuffle}/>
+         	  handleIncrement={this.handleIncrement}
+            handleLoss ={this.handleLoss}
+         	  handleShuffle = {this.handleShuffle}/>
 
         ))}
 

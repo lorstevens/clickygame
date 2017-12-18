@@ -5,8 +5,13 @@ import "./Photos.css";
 const Photos = props => (
   <div className= "images">
     <div className="img-container">
-    	<img alt={props.name} src={props.image} onClick={() => {props.handleShuffle(props.id); props.handleIncrement(props.id)}} />
- 		
+
+
+    	<img alt={props.name} src={props.image} onClick={() =>
+    	 {props.handleIncrement(props.id);
+    	 	props.handleLoss(props.id);
+    	  props.handleShuffle(props.id)}} />
+		
  	</div>
 
 
