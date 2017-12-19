@@ -12,7 +12,8 @@ class App extends Component {
   state = {
     photos,
     isClicked: false,
-    count: 0
+    count: 0,
+    guessed: []
   };
 
 
@@ -28,13 +29,21 @@ class App extends Component {
 };
 
 //THIS DOESN'T ACCOUNT FOR THE ID OF THE IMAGE-- WE WANT TO SEE IF ID IS CLICKED TWICE
-  handleLoss = id => {
-    if (this.state.isClicked === true){
-      this.setState({count: 0})
-      this.setState({isClicked: false})
- };
+ //  handleLoss = id => {
+ //    if (this.state.isClicked === true){
+ //      this.setState({count: 0})
+ //      this.setState({isClicked: false})
+ //      this.removeFriend();
+ // };
 
-
+ removeFriend = id => {
+    // Filter this.state.friends for friends with an id not equal to the id being removed
+    const photos = this.state.photos.filter(friend => friend.id !== id);
+    // Set this.state.friends equal to the new friends array
+    this.setState({ photos });
+    console.log(photos)
+  };
+// }
 
 // //   // handleLoss = () => {
 // //   //   photos.map(photo => {
@@ -45,7 +54,7 @@ class App extends Component {
 // //   //     };
 // //   // })
 
-}
+
 
 
 
@@ -70,6 +79,7 @@ render() {
             count={this.state.count}
          	  handleIncrement={this.handleIncrement}
             handleLoss ={this.handleLoss}
+            removeFriend={this.removeFriend}
          	  handleShuffle = {this.handleShuffle}/>
 
         ))}

@@ -4,12 +4,16 @@
   border-radius: 5px;
   height: 250px;
 /*  margin: auto;*/
-  margin: 1rem;
+/*  margin: 1rem;*/
+margin-left: 75px;
+margin-right: 10px;
+margin-bottom: 2rem;
   position: relative;
   display: block;
   width: 250px;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   float: left;
+  padding: 20px;
   /*text-align: left;*/
 }
 

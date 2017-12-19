@@ -1,34 +1,85 @@
 [
-  {
-    "id": 1,
-    "name": "Avril",
-    "isClicked": false,
-    "image":
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Avril_Lavigne%2C_Wango_Tango_2013.jpg/440px-Avril_Lavigne%2C_Wango_Tango_2013.jpg"
-
-  },
-  {
-    "id": 2,
-    "name": "Billie",
-    "isClicked": false,
-    "image":
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/RiP2013_GreenDay_Billie_Joe_Armstrong_0016.jpg/440px-RiP2013_GreenDay_Billie_Joe_Armstrong_0016.jpg"
-
-  },
-  {
-    "id": 3,
-    "name": "Joel",
-    "isClicked": false,
-    "image":
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Joel_Madden_2012_%282%29.jpg/440px-Joel_Madden_2012_%282%29.jpg"
-
-  },
     {
-    "id": 4,
-    "name": "Tom",
-    "isClicked": false,
-    "image":
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Tom_DeLonge_performing_at_early_Blink-182_show.jpg/440px-Tom_DeLonge_performing_at_early_Blink-182_show.jpg"
+        "id": 1,
+        "name": "Avril",
+        "isClicked": false,
+        "guessed": [],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Avril_Lavigne%2C_Wango_Tango_2013.jpg/440px-Avril_Lavigne%2C_Wango_Tango_2013.jpg"
 
-  }
+    },
+    {
+        "id": 2,
+        "name": "Billie",
+        "isClicked": false,
+        "guessed": [],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/RiP2013_GreenDay_Billie_Joe_Armstrong_0016.jpg/440px-RiP2013_GreenDay_Billie_Joe_Armstrong_0016.jpg"
+
+    },
+    {
+        "id": 3,
+        "name": "Joel",
+        "isClicked": false,
+        "guessed": [],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Joel_Madden_2012_%282%29.jpg/440px-Joel_Madden_2012_%282%29.jpg"
+
+    },
+    {
+        "id": 4,
+        "name": "Deryck",
+        "isClicked": false,
+        "guessed": [],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Sum41_Deryck_Whibley.jpg/440px-Sum41_Deryck_Whibley.jpg"
+
+    },
+    {
+        "id": 5,
+        "name": "Gwen",
+        "isClicked": false,
+        "guessed": [],
+        "image": "https://www.fuse.tv/image/56e99f064b13a6390d000070/768/512/december-15-1995-gwen-stefani-style-evolution.jpg"
+
+    },
+    {
+        "id": 6,
+        "name": "john",
+        "isClicked": false,
+        "guessed": [],
+        "image": "https://www.wnypapers.com/content/images/110-Ent/John-R-photo-credit-bob-mussel.jpg"
+
+    },
+
+    {
+        "id": 7,
+        "name": "Travis",
+        "isClicked": false,
+        "guessed": [],
+        "image": "https://pbs.twimg.com/profile_images/507202065492230144/kP2xP_B7_400x400.jpeg"
+    },
+
+    {
+        "id": 8,
+        "name": "Brandon",
+        "isClicked": false,
+        "guessed": [],
+        "image": "http://4.bp.blogspot.com/_EsMhWC2brHU/R9SaHnwriXI/AAAAAAAAAyc/IPcEsm9UZWk/s400/BrandonBoyd2.jpg"
+
+    },
+
+    {
+        "id": 9,
+        "name": "Slim",
+        "isClicked": false,
+        "guessed": [],
+        "image": "https://s2.vagalume.com/eminem/images/eminem.jpg"
+
+    },
+
+    {
+        "id": 10,
+        "name": "Tom",
+        "isClicked": false,
+        "guessed": [],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Tom_DeLonge_performing_at_early_Blink-182_show.jpg/440px-Tom_DeLonge_performing_at_early_Blink-182_show.jpg"
+
+    }
 ]

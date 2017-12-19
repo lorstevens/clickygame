@@ -11,17 +11,15 @@ const Photos = props => (
 
     	<img alt={props.name} src={props.image} onClick={(id) =>
     	 {props.handleIncrement(id);
-    	 	props.handleLoss(id);
-    	  props.handleShuffle(id)}} />
-
-    	  // if (props.isClicked === true){
-    	  // 	props.handleLoss()
+    	 	props.removeFriend(id);
+    	 	props.handleShuffle(id)}}
+    	   />
 
 
 
 
 
-    	  }
+    	  
 		
  	</div>
 
