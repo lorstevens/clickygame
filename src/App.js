@@ -15,26 +15,39 @@ class App extends Component {
     count: 0
   };
 
+
   handleIncrement = () => {
-    // We always use the setState method to update a component's state
     this.setState({ isClicked: true });
     this.setState({ count: this.state.count + 1 });
-    console.log(this.state);
   };
 
 
-  handleShuffle = () => {
-    //we need 
-  	this.setState ({photos: photos.sort(() => Math.random() * 2 -1)})
-}
 
-  handleLoss = () => {
+  handleShuffle = () => {
+  	this.setState ({photos: photos.sort(() => Math.random() * 2 -1)})
+};
+
+//THIS DOESN'T ACCOUNT FOR THE ID OF THE IMAGE-- WE WANT TO SEE IF ID IS CLICKED TWICE
+  handleLoss = id => {
     if (this.state.isClicked === true){
       this.setState({count: 0})
       this.setState({isClicked: false})
-      alert("Same person-- start again!")
-  }
+ };
+
+
+
+// //   // handleLoss = () => {
+// //   //   photos.map(photo => {
+// //   //     if(photo.id === photo.id && this.state.isClicked === true){
+// //   //       this.setState({count: 0})
+// //   //       this.setState({isClicked: false})
+// //   //       alert("Same person-- start again!")
+// //   //     };
+// //   // })
+
 }
+
+
 
 render() {
     return (

@@ -7,10 +7,21 @@ const Photos = props => (
     <div className="img-container">
 
 
-    	<img alt={props.name} src={props.image} onClick={() =>
-    	 {props.handleIncrement(props.id);
-    	 	props.handleLoss(props.id);
-    	  props.handleShuffle(props.id)}} />
+
+
+    	<img alt={props.name} src={props.image} onClick={(id) =>
+    	 {props.handleIncrement(id);
+    	 	props.handleLoss(id);
+    	  props.handleShuffle(id)}} />
+
+    	  // if (props.isClicked === true){
+    	  // 	props.handleLoss()
+
+
+
+
+
+    	  }
 		
  	</div>
 
