@@ -28,57 +28,44 @@ class App extends Component {
 
 onClick =() =>{
   this.handleShuffle();
-  this.incrementCount();
   this.addToGuessed();
+
 }
 
-  handleShuffle = () => {
-  	this.setState ({photos: photos.sort(() => Math.random() * 2 -1)})
+handleShuffle = () => {
+  this.setState ({photos: photos.sort(() => Math.random() * 2 -1)})
 };
 
 incrementCount =() => {
   this.setState({ count: this.state.count + 1 });
 }
 
-addToGuessed =(id) => {
- const newGuess = [...this.state.guessed, id]
- this.setState({guessed: newGuess})
+addToGuessed =id => {
+ // const newGuess = [...this.state.guessed, id]
+ // this.setState({guessed: newGuess})
+ // console.log(newGuess, id)
+
+//if the ID of guessed is not found, then increment count and add the ID to guessed array
+//this should work, but doesn't?
+  if (this.state.guessed.indexOf(id) === -1) { 
+    this.incrementCount();
+    this.setState({ guessed: this.state.guessed.concat(id) });
+  }
+  else {
+    this.reset();
+  }
+
+console.log(id);
+console.log(this.state.guessed); //this is pushing into guessed array, but undefined
+
+};
+
+reset = () => {
+  this.setState({count: 0})
 }
 
-checkIfGuessed =(id)=> {
 
-}
-
-//THIS DOESN'T ACCOUNT FOR THE ID OF THE IMAGE-- WE WANT TO SEE IF ID IS CLICKED TWICE
- //  handleLoss = id => {
- //    if (this.state.isClicked === true){
- //      this.setState({count: 0})
- //      // this.setState({isClicked: false})
- //      console.log(this.state.isClicked)
- // };
-
- // removeFriend = id => {
- //    // Filter this.state.friends for friends with an id not equal to the id being removed
- //    const photos = this.state.photos.filter(friend => friend.id !== id);
- //    // Set this.state.friends equal to the new friends array
- //    this.setState({ photos });
- //    console.log(photos)
-  // };
-// }
-
-// //   // handleLoss = () => {
-// //   //   photos.map(photo => {
-// //   //     if(photo.id === photo.id && this.state.isClicked === true){
-// //   //       this.setState({count: 0})
-// //   //       this.setState({isClicked: false})
-// //   //       alert("Same person-- start again!")
-// //   //     };
-// //   // })
-
-
-
-
-
+//render function
 render() {
     return (
       <Wrapper>
@@ -98,7 +85,6 @@ render() {
             image={friend.image}
             isClicked ={friend.isClicked}
             count={this.state.count}
-            removeFriend={this.removeFriend}
          	  onClick = {this.onClick}/>
 
         ))}
