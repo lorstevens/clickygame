@@ -44,25 +44,31 @@ addToGuessed =id => {
  // const newGuess = [...this.state.guessed, id]
  // this.setState({guessed: newGuess})
  // console.log(newGuess, id)
+ 
 
-//if the ID of guessed is not found, then increment count and add the ID to guessed array
-//this should work, but doesn't?
-  if (this.state.guessed.indexOf(id) === -1) { 
-    this.incrementCount();
-    this.setState({ guessed: this.state.guessed.concat(id) });
-  }
-  else {
-    this.reset();
-  }
+//===============================================================
+//if the ID of guessed is not found, then increment count
+// and add the ID to guessed array. This should work, but doesn't?
 
-console.log(id);
+const newGuess = this.state.guessed.concat(photo => 
+photo.id === -1);
+
+if (newGuess) { 
+  this.incrementCount();
+  this.setState({ guessed: newGuess });
+}
+else {
+  this.reset();
+}
 console.log(this.state.guessed); //this is pushing into guessed array, but undefined
 
 };
 
-reset = () => {
+reset = id => {
   this.setState({count: 0})
 }
+
+//==============================================================
 
 
 //render function
