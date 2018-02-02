@@ -44,11 +44,11 @@ addToGuessed =id => {
  // const newGuess = [...this.state.guessed, id]
  // this.setState({guessed: newGuess})
  // console.log(newGuess, id)
- 
+
 
 //===============================================================
 //if the ID of guessed is not found, then increment count
-// and add the ID to guessed array. This should work, but doesn't?
+// and add "concat" the ID to guessed array. This should work, but doesn't?
 
 const newGuess = this.state.guessed.concat(photo => 
 photo.id === -1);
