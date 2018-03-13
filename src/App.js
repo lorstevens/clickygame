@@ -13,8 +13,7 @@ class App extends Component {
     photos,
     isClicked: false,
     count: 0,
-    guessed: []
-  };
+      };
 
   componentDidMount() {
     this.setState({ photos: this.handleShuffle(this.state.photos) });
@@ -53,7 +52,7 @@ handleCorrectGuess = (newData) => {
 
 
 resetData = photos => {
-    const resetData = photos.map(item => ({ ...item, clicked: false }));
+    const resetData = photos.map(item => ({ ...item, guessed: false }));
     return this.handleShuffle(resetData);
   };
 
