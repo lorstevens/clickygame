@@ -6,12 +6,14 @@ const Photos = props => (
   <div className= "images">
     <div className="img-container">
 
+    
+
 
 
 
     	<img alt={props.name} src={props.image} onClick={(id) =>
     	 {
-    	 	props.onClick(id)}}
+    	 	props.handleClick(props.id)}}
     	   />
 
 

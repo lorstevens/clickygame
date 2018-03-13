@@ -16,57 +16,67 @@ class App extends Component {
     guessed: []
   };
 
+  componentDidMount() {
+    this.setState({ photos: this.handleShuffle(this.state.photos) });
+        }
 
-  // handleIncrement = (id) => {
-  //   this.setState({ isClicked: true } );
-  //   this.setState({ count: this.state.count + 1 });
-  //       const photos = this.state.guessed.push(friend => friend.id !== id);
-  //   // Set this.state.friends equal to the new friends array
-  //   this.setState({ photos });
-  //   console.log(this.state.guessed)
-  // };
-
-onClick =() =>{
-  this.handleShuffle();
-  this.addToGuessed();
-
-}
-
-handleShuffle = () => {
-  this.setState ({photos: photos.sort(() => Math.random() * 2 -1)})
-};
-
-incrementCount =() => {
-  this.setState({ count: this.state.count + 1 });
-}
-
-addToGuessed =id => {
- // const newGuess = [...this.state.guessed, id]
- // this.setState({guessed: newGuess})
- // console.log(newGuess, id)
+  handleShuffle = photos => {
+    console.log(photos);
+    let i = photos.length - 1;
+    while (i > 0) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = photos[i];
+      photos[i] = photos[j];
+      photos[j] = temp;
+      i--;
+    }
+    return photos;
+  };
 
 
-//===============================================================
-//if the ID of guessed is not found, then increment count
-// and add "concat" the ID to guessed array. This should work, but doesn't?
+handleCorrectGuess = (newData) => {
+    const {count} = this.state;
+    const newScore = count + 1;
+    this.setState({
+      photos: this.handleShuffle(newData),
+      count: newScore,
+    });
+    console.log(newScore)
+  };
 
-const newGuess = this.state.guessed.concat(photo => 
-photo.id === -1);
+  handleIncorrectGuess = photos => {
+    this.setState({
+      photos: this.resetData(photos),
+      count: 0
+    });
+  };
 
-if (newGuess) { 
-  this.incrementCount();
-  this.setState({ guessed: newGuess });
-}
-else {
-  this.reset();
-}
-console.log(this.state.guessed); //this is pushing into guessed array, but undefined
 
-};
+resetData = photos => {
+    const resetData = photos.map(item => ({ ...item, clicked: false }));
+    return this.handleShuffle(resetData);
+  };
 
-reset = id => {
-  this.setState({count: 0})
-}
+
+
+  handleItemClick = id => {
+    let guessedCorrectly = false;
+    const newData = this.state.photos.map(item => {
+      const newItem = { ...item };
+      if (newItem.id === id) {
+        if (!newItem.guessed) {
+          newItem.guessed = true;
+          guessedCorrectly = true;
+        }
+      }
+      return newItem;
+    });
+    guessedCorrectly
+      ? this.handleCorrectGuess(newData)
+      : this.handleIncorrectGuess(newData);
+  };
+
+
 
 //==============================================================
 
@@ -89,9 +99,9 @@ render() {
             key={friend.id}
             name={friend.name}
             image={friend.image}
-            isClicked ={friend.isClicked}
+            // isClicked ={friend.isClicked}
             count={this.state.count}
-         	  onClick = {this.onClick}/>
+         	  handleClick = {this.handleItemClick}/>
 
         ))}
 
